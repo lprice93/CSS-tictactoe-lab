@@ -1,0 +1,14 @@
+#board {
+    padding: 3em;
+    text-align: center;
+}
+.row {
+    float: left;
+    width: 100px;
+    height: 100px;
+    clear: both;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+}
