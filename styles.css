@@ -13,6 +13,8 @@
     clear: both;
     margin: 0 auto;
     width: 302px;
+    font-family: 'Caveat', cursive;
+    font-size: 40px;
 }
 
 .row div:hover {
@@ -33,4 +35,9 @@
 
 .right {
     border-left: 1px black solid;
+}
+
+h1 {
+    font-family: 'Questrial', sans-serif;
+    letter-spacing: 1px;
 }
