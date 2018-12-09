@@ -7,12 +7,18 @@
     float: left;
     width: 100px;
     height: 100px;
+    text-align: 1em;
+    line-height: 2.5em;
 }
 
 .row {
     clear: both;
     margin: 0 auto;
     width: 302px;
+    font-family: 'Caveat', cursive;
+    font-size: 40px;
+    text-align: center;
+    line-height: center;
 }
 
 .row div:hover {
@@ -33,4 +39,9 @@
 
 .right {
     border-left: 1px black solid;
+}
+
+h1 {
+    font-family: 'Questrial', sans-serif;
+    letter-spacing: 1px;
 }
