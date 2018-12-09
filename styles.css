@@ -17,8 +17,11 @@
     width: 302px;
     font-family: 'Caveat', cursive;
     font-size: 40px;
+<<<<<<< HEAD
     text-align: center;
     line-height: center;
+=======
+>>>>>>> 4087b3cd59672f99c664b0de052421d46770b084
 }
 
 .row div:hover {
@@ -44,4 +47,8 @@
 h1 {
     font-family: 'Questrial', sans-serif;
     letter-spacing: 1px;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 4087b3cd59672f99c664b0de052421d46770b084
