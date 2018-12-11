@@ -1,5 +1,8 @@
 let cells = document.querySelectorAll('.row div');
 let CurrentPlayer = 'X';
+let moveCount = 0;
+let gameOver = false;
+
 cells.forEach(function (cell) {
     cell.addEventListener('click', cellClicked);
 });
@@ -13,19 +16,37 @@ for(let i =0; i < cells.length; i++) {
 
 function cellClicked() {
     console.log(event.target);
+    if (gameOver) {
+        console.log('End Game');
+        cells.forEach(function (cell) {
+            cell.textContent = '';
+        })
+        document.querySelector('#results').textContent = '';
+        moveCount = 0;
+        CurrentPlayer = 'X';
+        gameOver = false;
+        return;
+    }
     /* checks to make sure cell is not empty */
     if (event.target.textContent !== "") {
         return;
     }
     event.target.textContent = CurrentPlayer;
-    togglePlayer(); /* this nests a function inside of a function */
+    moveCount++;
     checkWinLoseOrDraw(); /* this invokes a function within a function of a function */
+    togglePlayer(); /* this nests a function inside of a function */
 };
 
 function checkWinLoseOrDraw() {
     if (checkTop() || checkMiddle() || checkBottom() || checkVertical1() || checkVertical2() || checkVertical3() || checkDiagonalLeft() || checkDiagonalRight()) {
         console.log('We have a winner!');
-    } 
+        document.querySelector('#results').textContent = CurrentPlayer + 'Winner!';
+        gameOver = true;
+    } else if (moveCount >= 9) {
+        document.querySelector('#results').textContent = 'It\'s a draw!';
+        console.log('We have a draw!');
+        gameOver = true;
+    }
 }
 
 function checkTop() {
@@ -55,8 +76,6 @@ function checkVertical1() {
 function checkVertical2() {
     if (cells[1].textContent === cells[4].textContent && cells[7].textContent === cells[1].textContent && !isEmpty(1, 4, 7)) {
         return true;
-    } else {
-
     }
 }
 
@@ -84,11 +103,6 @@ function isEmpty(a, b, c) {
     }
 }
 
-let moveCount = 0;
-if (moveCount == 9) {
-    console.log('We have a draw!');
-}
-
 function togglePlayer() {
     if (CurrentPlayer === 'X') {
         CurrentPlayer = 'O';
@@ -96,11 +110,3 @@ function togglePlayer() {
         CurrentPlayer = 'X';
     }
 }
-
-
-/*
-row.addEventListener("click", myFunction);
-
-function myFunction() {
-    onclick("X");
-} */
