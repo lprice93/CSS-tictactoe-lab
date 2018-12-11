@@ -43,3 +43,9 @@ h1 {
     font-family: 'Questrial', sans-serif;
     letter-spacing: 1px;
 }
+
+#results {
+    font-family: 'Caveat', cursive;
+    font-size: 25px;
+    color: crimson;
+}
